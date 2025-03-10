@@ -26,3 +26,22 @@ url("{{$woff2.RelPermalink}}?524846017b983fc8ded9325d94ed40f3") format("woff") !
     width: 100%;
     border-radius: 10px;
 }
+
+@include media-breakpoint-up(md) {
+    .osc-screenshot {
+        width: 240px;
+    }
+}
+@include media-breakpoint-down(md) {
+    .osc-gallery div {
+        width: 100%;
+    }
+    .osc-screenshot {
+        a { display: block;}
+        img { width: 100%; }
+        video { width: 100%; }
+        flex-grow: 1;
+        width: 100%;
+        display:block;
+    }
+}

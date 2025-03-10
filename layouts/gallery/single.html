@@ -5,19 +5,18 @@
 
     <br />
 
-    {{ range $section := .Site.Data.gallery }}
-        <h2>
-            {{ .header }}
-        </h2>
-        <p class="lead">
-            Released {{ .released }}. <a href="{{ .releaseURL }}" ><i class="bi bi-github"></i> GitHub</a>
-        </p>
+    <div class="d-flex flex-row flex-wrap osc-gallery">
+        {{ range $section := .Site.Data.gallery }}
+        <div>
+            <p class="lead">
+                {{ .released }} - <a href="{{ .releaseURL }}" >{{ .header }} <i class="bi bi-github"></i></a>
+            </p>
 
-        <div class="d-flex flex-wrap">
-            {{ range $asset := .assets }}
-                <div class="col-md-3">
-                    {{ if .fileIsVideo }}
-                        <a href="{{ .file }}">
+            <div class="d-flex flex-row flex-wrap">
+                {{ range $asset := .assets }}
+                    <div class="osc-screenshot">
+                        {{ if .fileIsVideo }}
+                            <a href="{{ .file }}">
                                 {{ $posterFile := .file | strings.TrimSuffix  ".mp4" | strings.TrimSuffix ".webm" | printf "%s_thumbnail.jpg" }}
                                 <video
                                     class="img-fluid rounded img-thumbnail"
@@ -29,22 +28,24 @@
 
                                     <source src="{{ .file }}">
                                 </video>
-                        </a>
-                    {{ else }}
-                        {{ $file := resources.Get .file }}
-                        <a href="{{ $file.RelPermalink }}">
-                            <img
-                                class="img-fluid rounded img-thumbnail"
-                                src="{{ ($file.Fill "480x270 jpg q90 Center").RelPermalink  }}"
-                                loading="lazy"
-                            />
-                        </a>
-                    {{ end }}
-                </div>
-            {{ end }}
+                            </a>
+                        {{ else }}
+                            {{ $file := resources.Get .file }}
+                            <a href="{{ $file.RelPermalink }}">
+                                <img
+                                    class="img-fluid rounded img-thumbnail"
+                                    src="{{ ($file.Fill "480x270 jpg q90 Center").RelPermalink  }}"
+                                    loading="lazy"
+                                />
+                            </a>
+                        {{ end }}
+                    </div>
+                {{ end }}
+            </div>
+            <br />
         </div>
-        <br />
-    {{ end }}
+        {{ end }}
+    </div>
 </div>
 
 {{ end }}
