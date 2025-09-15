@@ -1,5 +1,13 @@
 [
     {
+        "header": "0.6.0",
+        "released": "2025/09/08",
+        "releaseURL": "https://github.com/ComputationalBiomechanicsLab/opensim-creator/releases/tag/0.6.0",
+        "assets": [
+            {"file": "img/gallery/0.6.0_ModelWarper.jpeg"}
+        ]
+    },
+    {
         "header": "0.5.25",
         "released": "2025/07/15",
         "releaseURL": "https://github.com/ComputationalBiomechanicsLab/opensim-creator/releases/tag/0.5.25",
