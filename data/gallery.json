@@ -1,5 +1,13 @@
 [
     {
+        "header": "0.7.2",
+        "released": "2026/02/19",
+        "releaseURL": "https://github.com/adamkewley/opensim-creator/releases/tag/0.7.2",
+        "assets": [
+            {"file": "img/gallery/0.7.2_coordinate-visualization.jpg"}
+        ]
+    },
+    {
         "header": "0.7.1",
         "released": "2026/01/12",
         "releaseURL": "https://github.com/adamkewley/opensim-creator/releases/tag/0.7.1",
